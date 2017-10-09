@@ -80,13 +80,23 @@ See above
 
 See above
 
+## Long-range forks
+
+See above
+
+## Security
+
+Assuming all the problems are solved, PoS should be more secure than PoW since in PoW, the most you can penalize someone is to withhold mining rewards, but in PoS you can slash their coins. The market cap of a currency is normally much higher than the economic value of its hashpower (multiplied by some time period).
+
 # Blockchain scaling
 
-Most chains currently support 10-100 tps. Transactions need to scale along two axes: throughput (more tps) and latency (shorter confirmation time). Simply increasing block size and block creation rate improves these metrics up to a point, but after a while greatly harm security.
+Most chains currently support 10-100 tps. Transactions need to scale along two axes: throughput (more tps) and latency (shorter confirmation time). Simply increasing block size and block creation rate improves these metrics up to a point, but after that greatly harm security.
 
 ## Bitcoin Lightning Network
 
 https://lightning.network/lightning-network-paper.pdf
+
+Uses multisig and fidelity bonds to allow an off-chain "side chain" between a small set of people. Serialization on the child chain is enforced by allowing participants to punish lying participants by publishing proof-of-fraud to the parent chain, causing the fraudster to lose their bond.
 
 ## Sharding
 
@@ -122,7 +132,7 @@ One way decentralized oracles might work. Kind of weird.
 
 # Stablecoins
 
-A cryptocurrency whose market value is close to the market value of some fiat currency. Kind of like implementing sovereign
+A cryptocurrency whose market value is close to the market value of some fiat currency. Kind of like implementing sovereign monetary policy.
 
 https://blog.ethereum.org/2014/11/11/search-stable-cryptocurrency/
 
