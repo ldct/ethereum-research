@@ -65,30 +65,30 @@ At this point, it is probably better to read by interest instead of through a fi
 
 ## Unanimous-Consent based off-chain scaling
 
-Jeff's State Channel blog posts
-Concurrency and Privacy with Payment-Channel Networks
+- Jeff's State Channel blog posts
+- Concurrency and Privacy with Payment-Channel Networks
 
 ## Fraud-Proof based off-chain scaling
 
-Truebit
-plasma.io
-Data Availability blog post and videos
+- Truebit
+- plasma.io
+- Data Availability blog post and videos
 
 ## Privacy
 
 Privacy is actually extremely important, but all the resources are very technical.
 
-zerocash paper
+- zerocash paper
 
 ## Proof of Stake
 
-Casper-FFG paper
-Vlad Zamfir's history of casper
+- Casper-FFG paper
+- Vlad Zamfir's history of casper
 
 ## "Non-linear" blockchains
 
-GHOST, Spectre
-Hashgraph
+- GHOST, Spectre
+- Hashgraph
 
 ## Sidechains
 
