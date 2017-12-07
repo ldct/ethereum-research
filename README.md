@@ -1,11 +1,103 @@
-# blockchain-notes
+# awesome-ethereum-research
 
-These are some notes on the technologies behind blockchains. It is meant for people who already understand Bitcoin, at least. The presentation is quite idosyncratic.
+This is a list of resources to get a reader up to speed on research behind blockchain fundamental technology (consensus protocols, scalability, privacy, etc), with an emphasis on Ethereum.
 
-# Distributed Ledger and Proof of Work
+# Recommended Reading Order
 
-<!-- A financial system such as the US banking system can be thought of as a database mapping account numbers (that represent persons, corporations, etc) to account balances (representing amount of USD owned by the account). Equivalently, it is a list of transactions respecting certain constraints. A distributed ledger allows a set of people to "trustlessly" mantain such a ledger. In a centralized ledger, parties propose transactions and one specially-designated party is responsible for serializing the transactions. A naive approach to building a distributed ledger would be to get rid of the specially-designated party and have participants' majority votes decide serialization order. This is vulnerable to sybil attacks, where one party pretends to be 2 parties to have 2 votes, and so on. PoW fixes this by making voting power proportional to computational power, which cannot be duplicated.
- -->
+A lot of stuff is pretty dense so here is my (very biased) list of most important resources to read. I apologize in advance if lots of these are written by Ethereum Foundation members - I definitely intend for this list to include things outside Ethereum's scope like Proof of Storage based consensus - but this is the most "subjective" section and non-ethereum resources appear more in later sections.
+
+## Bitcoin White Paper
+
+https://bitcoin.org/bitcoin.pdf
+
+Yes, this list contains "ethereum" in the title, but we can't ignore the OG cryptocurrency. Read this to understand how Proof of Work offers security, the ubiquitous block/transactions model, and Bitcoin's UTXO abstraction.
+
+## Ethereum White Paper
+
+https://github.com/ethereum/wiki/wiki/White-Paper
+
+Describes a cryptocurrency with Turing complete scripting language. Also describes Bitcoin at about the same level of detail as Satoshi's paper, which might help you get some confusing concepts. Read it to understand what smart contracts are and why they might be useful. It also has some anciliary mostly-orthogonal technical innovations which you should skim or skip for now:
+
+- GHOST-like protocols to reduce "wasted" hashpower
+- The account abstraction vs Bitcoin's UTXO abstraction
+
+## Introduction to Blockchain Scaling
+
+https://hackernoon.com/blockchains-dont-scale-not-today-at-least-but-there-s-hope-2cb43946551a
+
+Read this to understand exactly what the scaling problem is - why exactly is there a really low transactions-per-second cap, between 5 and 50, on both ETH and BTC? - and an overview of some solutions.
+
+## On-chain Scaling: Vitalik's Scalability Blog Posts
+
+https://blog.ethereum.org/2014/09/17/scalability-part-1-building-top/
+https://blog.ethereum.org/2014/10/21/scalability-part-2-hypercubes/
+https://blog.ethereum.org/2014/11/13/scalability-part-3-metacoin-history-multichain/
+
+These posts are well-written but presume a lot of previous knowledge (like most of Vitalik's writing), so I hesitate to put them here, but scalability is such an important problem that it is a good idea to start thinking in detail about how to solve it - and the previous post misses some solutions. Vitalik's 3-part blog post is a bit old and certainly not comprehensive, but it's a good place to start skimming. Feel free to skip parts 2 and 3 for now.
+
+## Off-chain Scaling: Bitcoin Lightning Network
+
+https://lightning.network/lightning-network-paper.pdf
+
+On-chain and off-chain methods for scaling are mostly orthogonal, and this is the OG off-chain scaling paper. I should comment that a lot of the paper is dedicated to implementing lightning networks using Bitcoin opcodes, which being non-Turing-complete are quite awkward to use - so don't worry too much about it.
+
+## Proof of Stake: How I Learned to Love Weak Subjectivity
+
+https://blog.ethereum.org/2014/11/25/proof-stake-learned-love-weak-subjectivity/
+
+Proof of Stake is very controversial outside of the ethereum community. There are no really good resources about it, but this post has good descriptions on two important problems - nothing-at-stake and long-range attacks - as well as how Ethereum plans to solve them. It also presents why PoS can have better security than PoW and one seemingly inescapable problem with any PoS, the whole subjective checkpoint business.
+
+## A Prehistory of the Ethereum Protocol
+
+http://vitalik.ca/general/2017/09/14/prehistory.html
+
+I think this is a good point (perhaps even overdue) to learn about the history of Ethereum, to understand which parts are fundamental decisions and which are path-dependent accidents. Also a very well written story.
+
+## Secret Sharing and Erasure Coding: A Guide for the Aspiring Dropbox Decentralizer
+
+https://blog.ethereum.org/2014/08/16/secret-sharing-erasure-coding-guide-aspiring-dropbox-decentralizer/
+
+It's not like the problem of writing a decentralized dropbox is THE killer app for blockchains, but this post goes into a lot of detail and describes the actual problems you have to solve to build a decentralized dropbox. Writing dapps and getting the incentive structure correct is hard - a lot of people think you can put anything on it by magic.
+
+# Subject-specific recommended reading order
+
+At this point, it is probably better to read by interest instead of through a fixed order. However, I also have recommendations for specific subjects.
+
+## Unanimous-Consent based off-chain scaling
+
+Jeff's State Channel blog posts
+Concurrency and Privacy with Payment-Channel Networks
+
+## Fraud-Proof based off-chain scaling
+
+Truebit
+plasma.io
+Data Availability blog post and videos
+
+## Privacy
+
+Privacy is actually extremely important, but all the resources are very technical.
+
+zerocash paper
+
+## Proof of Stake
+
+Casper-FFG paper
+Vlad Zamfir's history of casper
+
+## "Non-linear" blockchains
+
+GHOST, Spectre
+Hashgraph
+
+## Sidechains
+
+# Resources
+
+Here are links to resources, grouped by concepts.
+
+# Proof of Work
+
 ## 51% attack
 
 If all parties have small hashpower (say <5%) and no way to collude with each other, it is in their economic incentive to work on the longest chain and respect its contraints, and no single party can "rewrite history". If one party controls >51% this is no longer possible.
@@ -21,6 +113,12 @@ Application-specific Integrated Circuits (ASICs) encourage centralization. An AS
 ## Multisignature Wallet
 
 A wallet that requires >1 private key to sign transactions from. https://en.bitcoin.it/wiki/Multisignature
+
+## Reducing Variance
+
+## Useful PoW
+
+## PoPoW
 
 # Privacy
 
@@ -100,7 +198,7 @@ Uses multisig and fidelity bonds to allow an off-chain "side chain" between a sm
 
 ## Sharding
 
-Not sure what this is, but seems inspired by database sharding.
+Taipei talk
 
 # Ethereum Off-chain computation
 
@@ -118,7 +216,6 @@ http://delivery.acm.org/10.1145/2650000/2641562/p74-walfish.pdf?ip=129.97.125.1&
 
 # Ethereum Off-chain storage
 
-https://blog.ethereum.org/2014/08/16/secret-sharing-erasure-coding-guide-aspiring-dropbox-decentralizer/
 
 # Oracles
 
