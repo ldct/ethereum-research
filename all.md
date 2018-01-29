@@ -33,4 +33,7 @@ Selfish mining, etc
 
 ## Sidechains
 
+## stablecoins
+
+https://github.com/rmsams/stablecoins
 
