@@ -67,7 +67,3 @@ I think this is a good point (perhaps even overdue) to learn about the history o
 https://blog.ethereum.org/2014/08/16/secret-sharing-erasure-coding-guide-aspiring-dropbox-decentralizer/
 
 It's not like the problem of writing a decentralized dropbox is THE killer app for blockchains, but this post goes into a lot of detail and describes the actual problems you have to solve to build a decentralized dropbox. Writing dapps and getting the incentive structure correct is hard - a lot of people think you can put anything on it by magic.
-
-## Proofs of Space
-
-Skim this: https://eprint.iacr.org/2013/796.pdf
