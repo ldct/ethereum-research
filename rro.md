@@ -4,14 +4,16 @@
 
 https://bitcoin.org/bitcoin.pdf
 
-OG cryptocurrency.
+The OG cryptocurrency. Covers
 
 - How Proof of Work offers security, and the incentives involved
 - The block/transactions model (ubiquitous in most cryptocurrencies)
 - The UTXO abstraction
 - SPV client vs Full Node
 
-Note: the diagram on page 2 is quite confusing, I like Joao Batalha's clarification at https://fermatslibrary.com/s/bitcoin
+The diagram on page 2 is quite confusing, I like Joao Batalha's clarification at https://fermatslibrary.com/s/bitcoin
+
+On a first readthrough, I would focus on the game theory / cryptoeconomics behind PoW, and why cryptograph without cryptoeconomics can't solve the problem of decentralized currency, skipping the details about UTXOs and light clients.
 
 ## Ethereum White Paper
 
@@ -27,7 +29,7 @@ Describes ethereum. Also describes Bitcoin at about the same level of detail as 
 
 https://hackernoon.com/blockchains-dont-scale-not-today-at-least-but-there-s-hope-2cb43946551a
 
-Read this to understand exactly what the scaling problem is - why exactly is there a really low transactions-per-second cap, between 5 and 50, on both ETH and BTC? - and an overview of some solutions.
+Covers what the scaling problem is - why exactly is there a really low transactions-per-second cap, between 5 and 50, on both ETH and BTC? - and an overview of some solutions.
 
 ## Scalability, Part 1: Building on Top
 
@@ -44,11 +46,7 @@ https://blog.ethereum.org/2014/11/13/scalability-part-3-metacoin-history-multich
 
 https://lightning.network/lightning-network-paper.pdf
 
-On-chain and off-chain methods for scaling are mostly orthogonal, and this is the OG off-chain scaling paper. I should comment that a lot of the paper is dedicated to implementing lightning networks using Bitcoin opcodes, which being non-Turing-complete are quite awkward to use - so don't worry too much about it.
-
-## Proofs of Space
-
-Skim this: https://eprint.iacr.org/2013/796.pdf
+On-chain and off-chain methods for scaling are largely orthogonal. A lot of the paper is dedicated to implementing lightning networks using Bitcoin opcodes, which being non-Turing-complete are quite awkward to use.
 
 ## Proof of Stake: How I Learned to Love Weak Subjectivity
 
@@ -69,3 +67,7 @@ I think this is a good point (perhaps even overdue) to learn about the history o
 https://blog.ethereum.org/2014/08/16/secret-sharing-erasure-coding-guide-aspiring-dropbox-decentralizer/
 
 It's not like the problem of writing a decentralized dropbox is THE killer app for blockchains, but this post goes into a lot of detail and describes the actual problems you have to solve to build a decentralized dropbox. Writing dapps and getting the incentive structure correct is hard - a lot of people think you can put anything on it by magic.
+
+## Proofs of Space
+
+Skim this: https://eprint.iacr.org/2013/796.pdf
